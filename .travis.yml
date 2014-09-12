@@ -1,19 +1,19 @@
 language: python
 python:
 - 2.7
-
 notifications:
   email: false
-
 deploy:
   provider: s3
   bucket: www.glueviz.org
   skip_cleanup: true
   local-dir: test/
   upload-dir: test/
-
   access_key_id: AKIAI2ERWDHLW3W24X3A
   secret_access_key: $AWS_SECRET_KEY_ID
   on:
-     condition:
-       - "$TRAVIS_SECURE_ENV_VARS = true"
+    condition:
+    - $TRAVIS_SECURE_ENV_VARS = true
+env:
+  global:
+    secure: Zb3J/PYIR8ALT72ojn+REjP8yedgFpW9g2at+rVMzYqaIQ3OaBwWUn8olyVZC+9BJ32buLtoMsqV+PxtFM0TaW8K3Os19TUOX89MNRs9a4ovu9PPaiFMqqcXskW8AUnJTiv3iyZ+KYSHX8IWflZ9R8AHWadbYrOuyftZsiKXyx0=
