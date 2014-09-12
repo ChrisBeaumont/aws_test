@@ -3,6 +3,10 @@ python:
 - 2.7
 notifications:
   email: false
+install:
+- ls
+script:
+- ls
 deploy:
   provider: s3
   bucket: www.glueviz.org
